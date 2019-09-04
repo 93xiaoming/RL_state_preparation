@@ -3,9 +3,9 @@ from scipy.linalg import expm
 import itertools
 
 SPIN_NUM = 8
-MAG = 40
-COUPLING = 1
-DT = 0.05*(SPIN_NUM-1)*np.pi
+MAG = 2*40
+COUPLING = 2*1
+DT = 0.05*(SPIN_NUM-1)*np.pi*0.5
 
 def mg_config(x,dim):
     if dim>1:
