@@ -8,7 +8,7 @@ def hamiltonian(j):
     J  = 1.
 
     H  = np.diag([1. for ii in range(dim-1)],1)+np.diag([1. for ii in range(dim-1)],-1)
-    H += J*np.diag(j)
+    H += 0.5*J*np.diag(j) #The coupling should be (effectively) divided by a factor of 2 
     return H
 
 
@@ -46,10 +46,10 @@ def gradient_descent(x, learning_rate, T, num_iterations):
 
 dim=8
 N = 20
-T = np.pi*(dim-1)        
+T = 0.5*np.pi*(dim-1)        
 ep_max=500
 
-seq = 40*np.random.rand(N,dim)
+seq = 2*40*np.random.rand(N,dim)
 fidelity= gradient_descent(seq, 0.01, T, ep_max)
 
 print ('Final_fidelity=',fidelity)
