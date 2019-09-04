@@ -5,9 +5,9 @@ from scipy import linalg
 def hamiltonian(j):
     j=j.tolist()
     dim=len(j)
-    J  = 1.
+    J  = 2*1. #should (effectively) multiply by a factor of 2 
     H  = np.diag([1. for ii in range(dim-1)],1)+np.diag([1. for ii in range(dim-1)],-1)
-    H += 0.5*J*np.diag(j) #The coupling should be (effectively) divided by a factor of 2 
+    H += J*np.diag(j) 
     return H
 
 
