@@ -6,7 +6,7 @@ def hamiltonian(j):
     j=j.tolist()
     dim=len(j)
     J  = 2*1. #should (effectively) multiply by a factor of 2 
-    H  = np.diag([1. for ii in range(dim-1)],1)+np.diag([1. for ii in range(dim-1)],-1)
+    H  = np.diag([J for ii in range(dim-1)],1)+np.diag([J for ii in range(dim-1)],-1)
     H += J*np.diag(j) 
     return H
 
