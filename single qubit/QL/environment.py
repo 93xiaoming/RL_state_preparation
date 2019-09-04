@@ -96,7 +96,8 @@ class Maze:
             done = True
             s_lattice = 'terminal'
         else:
-            reward = -1*(error>=0.5) + 10*(error<0.5) + 100*(error<0.1)
+            #reward = -1*(error>=0.5) + 10*(error<0.5) + 100*(error<0.1)
+            reward = 10*(error<0.5) + 100*(error<0.1)
             done = (self.counter >= np.pi/dt)
             s_lattice = state_to_lattice_point(s_)
         return s_lattice, reward, done, fidelity
