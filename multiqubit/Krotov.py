@@ -40,7 +40,7 @@ for episode in range(ep_max):
         for ii in range(dim):
             seq_f[k,ii] = seq[k,ii] + 1*(pseudo[ii,k].conj()* psi[ii,k]).imag
         
-        seq_f = np.clip(seq_f,0,2*40)
+        seq_f = np.clip(seq_f,0,40)
         psi[:,k+1] = linalg.expm(-(1j) * hamiltonian(seq_f[k]) * dt).dot(psi[:,k])
         seq = seq_f
     fid = (np.absolute(psi[-1,-1]))**2
