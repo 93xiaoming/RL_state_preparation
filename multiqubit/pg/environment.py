@@ -58,7 +58,7 @@ class State(object):
             doned = True
 
 
-        reward = reward*(0.95**stp)
+        #reward = reward*(0.95**stp)
 
         next_states = [next_state[i,0] for i in range(SPIN_NUM)]
         next_states = np.array(list(itertools.chain(*[(i.real, i.imag) for i in next_states])))
